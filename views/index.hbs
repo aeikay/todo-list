@@ -2,8 +2,10 @@
 
     <div class="row h-100 justify-content-center align-items-center">
         <div class="card border-dark mb-3" style="width: 18rem;">
-            <div class="card-header">
-                TO-DO LIST
+            <div class="card-header"><br>
+                TO-DO LIST <p id="date">
+
+                </p>
             </div>
             <ul id="list-grp" class="list-group list-group-flush">
 
@@ -21,6 +23,11 @@
 
         </div>
         <script>
+
+            var date = new Date();
+            let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('date').innerHTML = date.toLocaleString('en-US', options)
+
             function addItem() {
                 var ul = document.getElementById("list-grp");
                 var candidate = document.getElementById("candidate");
