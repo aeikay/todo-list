@@ -1,0 +1,33 @@
+<div class="container mt-5 h-100">
+
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="card border-dark mb-3" style="width: 18rem;">
+            <div class="card-header">
+                TO-DO LIST
+            </div>
+            <ul id="list-grp" class="list-group list-group-flush">
+
+                <li class="list-group-item"><input type="text" id="candidate" /></li>
+                <li class="list-group-item"> <input class="form-check-input me-1" type="checkbox" value=""
+                        aria-label="...">
+                    Cras justo odio</li>
+
+
+            </ul>
+
+            <div class="card-footer bg-transparent border-success"><button type="button" onclick=addItem()
+                    class="btn btn-info">Add anOTHER (+)</button>
+            </div>
+
+        </div>
+        <script>
+            function addItem() {
+                var ul = document.getElementById("list-grp");
+                var candidate = document.getElementById("candidate");
+                var li = document.createElement("li");
+                li.className = "list-group-item";
+                li.setAttribute('id', candidate.value);
+                li.appendChild(document.createTextNode(candidate.value));
+                ul.appendChild(li);
+            }
+        </script>
